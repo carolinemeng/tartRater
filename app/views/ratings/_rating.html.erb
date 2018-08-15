@@ -1,0 +1,11 @@
+<div class:"rating">
+<div class="rating-taste" data-score="<%= rating.taste %>">Taste  </div>
+<div class="rating-appearance" data-score="<%= rating.appearance %>">Appearance  </div>
+<div class="rating-texture" data-score="<%= rating.texture %>">Texture  </div>
+<h3>Comment</h3>
+<p><%= rating.comment %></p>
+
+<%= link_to "Edit Rating", edit_tart_rating_path(rating.tart, rating) %>
+<%= link_to "Delete", tart_rating_path(rating.tart, rating), method: :delete, data: {
+    confirm: "Are you sure?" } %>
+    </div>

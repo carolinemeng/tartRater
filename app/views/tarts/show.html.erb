@@ -1,0 +1,55 @@
+<div>
+<p=class"links"><%= link_to "Back", root_path %></p>
+<p=class"links"><%= link_to "Add a Rating", new_tart_rating_path(@tart) %></p>
+
+<p=class"links"><%= link_to "Edit", edit_tart_path %></p>
+<p=class"links"><%= link_to "Delete", tart_path(@tart), method: :delete, data: { confirm: "Are you sure?" } %>
+</p>
+</div>
+
+<div class ="row">
+
+<div class="col-md-4">
+<%= image_tag @tart.tart_image.url(:tart_show), class: "tart-show" %>
+</div>
+
+
+<div class="ratings" >
+<h2> Ratings </h2>
+<div class="rating">
+<%= render @tart.ratings %>
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+$('.rating-taste').raty({
+readOnly: true,
+score: function() {
+return $(this).attr('data-score');
+},
+path: '/assets/images'
+});
+</script>
+
+<script>
+$('.rating-appearance').raty({
+readOnly: true,
+score: function() {
+return $(this).attr('data-score');
+},
+path: '/assets/images'
+});
+</script>
+
+<script>
+$('.rating-texture').raty({
+readOnly: true,
+score: function() {
+return $(this).attr('data-score');
+},
+path: '/assets/images'
+});
+</script>

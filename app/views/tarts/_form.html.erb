@@ -1,0 +1,5 @@
+<%= simple_form_for @tart do |f| %>
+    <%= f.input :name, label: "PopTart Flavor" %>
+    <%= f.file_field :tart_image %>    
+    <%= f.submit "Add PopTart" %>
+<% end %>
